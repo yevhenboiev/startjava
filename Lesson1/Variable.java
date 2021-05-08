@@ -16,6 +16,6 @@ public class Variable {
         System.out.println("Номер процессора: " + numberCore + 
                 "\nЧастота процессора: " + frequency + "Ггц" + 
                 "\nНазвание процессора: "+ nameCore);
-        System.out.println("Состояние питания: " + power + "\nПриставка процессора: " +        numCore);
+        System.out.println("Состояние питания: " + power + "\nПриставка процессора: " + numCore);
     }
 }
