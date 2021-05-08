@@ -16,8 +16,7 @@ public class Calculator {
 		//firstNumber = 1;
 		if (firstNumber > 0) {
 			System.out.println("Ваше число: " + firstNumber);
-		}
-		else {
+		} else {
 			System.out.println("Вы ввели отрицательное число! Повторите попытку");
 		}
 
@@ -27,8 +26,7 @@ public class Calculator {
 		//sign = '+';
 		if(sign == '*' || sign == '/' || sign == '+' || sign == '-' || sign == '%' || sign == '^') {
 			System.out.println("Вы ввели знак " + sign);
-		}
-		else{
+		} else {
 			System.out.println("К сожалению, мы не знаем такого знака. Повторите попытку");
 		}
 
@@ -37,32 +35,26 @@ public class Calculator {
 		//secondNumber = 2;
 		if (secondNumber > 0) {
 			System.out.println("Ваше число: " + secondNumber);
-		}
-		else {
+		} else {
 			System.out.println("Вы ввели отрицательное число! Повторите попытку");
 		}
 
 		if(sign == '*') {
 			result = firstNumber * secondNumber;
 			System.out.println("Ваше выражение равно " + result);
-		}
-		else if(sign == '/') {
+		} else if(sign == '/') {
 			result = firstNumber / secondNumber;
 			System.out.println("Ваше выражение равно " + result);
-		}
-		else if(sign == '+') {
+		} else if(sign == '+') {
 			result = firstNumber + secondNumber;
 			System.out.println("Ваше выражение равно " + result);
-		}
-		else if(sign == '-') {
+		} else if(sign == '-') {
 			result = firstNumber - secondNumber;
 			System.out.println("Ваше выражение равно " + result);
-		}
-		else if(sign == '%') {
+		} else if(sign == '%') {
 			result = firstNumber % secondNumber;
 			System.out.println("Ваше выражение равно " + result);
-		}
-		else if(sign == '^') {
+		} else if(sign == '^') {
 			result = (int) Math.pow(firstNumber, secondNumber);
 			System.out.println("Ваше выражение равно " + result);
 		}
