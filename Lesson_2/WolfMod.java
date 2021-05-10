@@ -3,7 +3,7 @@ public class WolfMod {
     private String sex;
     private String color;
     private int age;
-    private int weigth;
+    private int weight;
 
     public String getName() {
         return name;
@@ -41,12 +41,12 @@ public class WolfMod {
         }
     }
 
-    public int getWeigth() {
+    public int getWeight() {
         return weigth;
     }
 
-    public void setWeigth(int weigth) {
-        this.weigth = weigth;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public void sit() {

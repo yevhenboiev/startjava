@@ -5,7 +5,7 @@ public class WolfTest {
         one.sex = "Кабель";
         one.color = "Черный";
         one.age = 2;
-        one.weigth = 30;
+        one.weight = 30;
         one.sit();
         one.move();
         one.run();
@@ -15,6 +15,6 @@ public class WolfTest {
         System.out.println("Мой пол: " + one.sex);
         System.out.println("Моя окрас: " + one.color);
         System.out.println("Мой возраст: " + one.age);
-        System.out.println("Мой вес: " + one.weigth);
+        System.out.println("Мой вес: " + one.weight);
     }
 }

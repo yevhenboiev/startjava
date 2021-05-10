@@ -3,7 +3,7 @@ public class Wolf {
     private String sex;
     private String color;
     private int age;
-    private int weigth;
+    private int weight;
 
     public void sit() {
         System.out.println("Я хороший, я сижу");

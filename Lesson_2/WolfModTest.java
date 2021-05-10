@@ -5,7 +5,7 @@ public class WolfModTest {
         one.setSex("Мужской");
         one.setColor("Черный");
         one.setAge(2);
-        one.setWeigth(30);
+        one.setWeight(30);
         one.sit();
         one.move();
         one.run();
@@ -15,6 +15,6 @@ public class WolfModTest {
         System.out.println("Мой пол " + one.getSex());
         System.out.println("Моя окрас: " + one.getColor());
         System.out.println("Мой возраст: " + one.getAge());
-        System.out.println("Мой вес: " + one.getWeigth());
+        System.out.println("Мой вес: " + one.getWeight());
     }
 }

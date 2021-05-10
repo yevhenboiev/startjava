@@ -1,8 +1,8 @@
 public class Person {
     String name = "Саша";
     String sex = "Мужской";
-    double heigth = 1.80;
-    int weigth = 72;
+    double height = 1.80;
+    int weight = 72;
     int age = 24;
 
     public void move() {
