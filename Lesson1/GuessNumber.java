@@ -9,9 +9,9 @@ public class GuessNumber {
                 System.out.println("Поздравляю, число угадано!");
                 break;
             } else if (myNumber < randomNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else if (myNumber > randomNumber) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
+            } else if (myNumber > randomNumber) {
+                System.out.println("Данное число больше того, что загадал компьютер");
             }
         }
     }
