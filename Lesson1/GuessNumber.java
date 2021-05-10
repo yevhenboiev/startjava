@@ -2,7 +2,6 @@ public class GuessNumber {
     public static void main(String[] args) {
         int randomNumber = 10;
         int myNumber;
-
         for (int i = 0; i <= randomNumber; i++) {
             myNumber = i;
             if (myNumber == randomNumber) {
