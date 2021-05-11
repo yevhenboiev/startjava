@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class CalculatorTest {
-    
+
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         Calculator calculator = new Calculator();
@@ -21,14 +21,12 @@ public class CalculatorTest {
             System.out.println("Введите второе число:");
             calculator.secondNumber = console.nextInt();
             calculator.calculate();
-            String reply = "";
-            while ((!reply.equals("yes")) && (!reply.equals("no"))) {
+            String reply;
+            do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]:");
                 reply = console.nextLine();
-            }
-            if (reply.equals("yes")){
-                returned = true;
-            } else if (reply.equals("no")) {
+            } while (!reply.equals("yes") && !reply.equals("no"));
+            if (reply.equals("no")) {
                 returned = false;
             }
         }
