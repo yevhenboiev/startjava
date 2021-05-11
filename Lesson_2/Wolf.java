@@ -1,9 +1,9 @@
 public class Wolf {
-    private String name;
-    private String sex;
-    private String color;
-    private int age;
-    private int weight;
+    String name;
+    String sex;
+    String color;
+    int age;
+    int weight;
 
     public void sit() {
         System.out.println("Я хороший, я сижу");

@@ -37,7 +37,7 @@ public class WolfMod {
         if(age < 8) {
             System.out.println("Неккоректный возраст");
         } else {
-        this.age = age;
+            this.age = age;
         }
     }
 
