@@ -1,38 +1,45 @@
 public class Calculator {
 
-    char sign;
-    int firstNumber;
-    int secondNumber;
-    int result;
+    private char sign;
+    private int firstNumber;
+    private int secondNumber;
+    
+    public void setFirstNumber(int firstNumber) {;
+        this.firstNumber = firstNumber;
+    }
+
+    public void setSign(char sign) {
+        this.sign = sign;
+    }
+
+    public void setSecondNumber(int secondNumber) {
+        this.secondNumber = secondNumber;
+    }
 
     public void calculate() {
+        int result = 0;
         switch (sign) {
             case '+' :
                 result = firstNumber + secondNumber;
-                System.out.println("Ваше выражение = " + result);
                 break;
             case '-' :
                 result = firstNumber - secondNumber;
-                System.out.println("Ваше выражение = " + result);
                 break;
             case '*' :
                 result = firstNumber * secondNumber;
-                System.out.println("Ваше выражение = " + result);
                 break;
             case '/' :
                 result = firstNumber / secondNumber;
-                System.out.println("Ваше выражение = " + result);
                 break;
             case '%' :
                 result = firstNumber % secondNumber;
-                System.out.println("Ваше выражение = " + result);
                 break;
             case '^' :
                 result = 1;
                 for (int i = 0; i < secondNumber; i++) {
                     result *= firstNumber;
                 }
-                System.out.println("Ваше выражение = " + result);
         }
+        System.out.println("Ваше выражение = " + result);
     }
 }

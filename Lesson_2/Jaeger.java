@@ -93,8 +93,4 @@ public class Jaeger {
     public void move() {
         System.out.println("Ну я эт, пошел");
     }
-
-
-
-
 }
