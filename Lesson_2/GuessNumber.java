@@ -2,30 +2,27 @@ import java.util.Scanner;
 
 public class GuessNumber {
 
-    private Player playerFirst;
-    private Player playerSecond;
+    private Player firstPlayer;
+    private Player secondPlayer;
     private int randomNumber;
-    private boolean winnerDetected;
 
     Scanner console = new Scanner(System.in);
 
-    public GuessNumber(Player playerFirst, Player playerSecond) {
-        this.playerFirst = playerFirst;
-        this.playerSecond = playerSecond;
+    public GuessNumber(Player firstPlayer, Player secondPlayer) {
+        this.firstPlayer = firstPlayer;
+        this.secondPlayer = secondPlayer;
     }
 
-    public void startGame() {
+    public void start() {
         randomNumber = (int) (Math.random()*100);
         System.out.println("Вам предстоить угадать число от 0 до 100");
-        while(true) {
-            inputNumber(playerFirst);
-            checkNumber(playerFirst);
-            if(winnerDetected) {
+        while (true) {
+            inputNumber(firstPlayer);
+            if (checkNumber(firstPlayer) == false) {
                 break;
             }
-            inputNumber(playerSecond);
-            checkNumber(playerSecond);
-            if(winnerDetected) {
+            inputNumber(secondPlayer);
+            if (checkNumber(secondPlayer) == false) {
                 break;
             }
         }
@@ -36,14 +33,15 @@ public class GuessNumber {
         player.setNumber(console.nextInt());
     }
     
-    public void checkNumber(Player player) {
+    public boolean checkNumber(Player player) {
         if (player.getNumber() < randomNumber) {
             System.out.println(player.getName() + " Ваше число меньше загаданного!");
         } else if (player.getNumber() > randomNumber) {
             System.out.println(player.getName() + " Ваше число больше загаданного!");
         } else {
             System.out.println(player.getName() + " Вы победили!");
-            winnerDetected = true;
+            return false;
         }
+        return true;
     }
 }
