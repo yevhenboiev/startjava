@@ -14,26 +14,26 @@ public class GuessNumber {
     }
 
     public void start() {
-        randomNumber = (int) (Math.random()*100);
+        randomNumber = (int) (Math.random() * 100);
         System.out.println("Вам предстоить угадать число от 0 до 100");
         while (true) {
             inputNumber(firstPlayer);
-            if (checkNumber(firstPlayer) == false) {
+            if (!checkNumber(firstPlayer)) {
                 break;
             }
             inputNumber(secondPlayer);
-            if (checkNumber(secondPlayer) == false) {
+            if (!checkNumber(secondPlayer)) {
                 break;
             }
         }
     }
 
-    public void inputNumber(Player player) {
+    private void inputNumber(Player player) {
         System.out.println(player.getName() + " введите ваше число:");
         player.setNumber(console.nextInt());
     }
     
-    public boolean checkNumber(Player player) {
+    private boolean checkNumber(Player player) {
         if (player.getNumber() < randomNumber) {
             System.out.println(player.getName() + " Ваше число меньше загаданного!");
         } else if (player.getNumber() > randomNumber) {
