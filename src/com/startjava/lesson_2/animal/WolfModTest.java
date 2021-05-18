@@ -1,3 +1,5 @@
+package com.startjava.lesson_2.animal;
+
 public class WolfModTest {
     public static void main(String[] args) {
         WolfMod one = new WolfMod();

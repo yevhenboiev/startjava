@@ -1,3 +1,5 @@
+package com.startjava.lesson_2.animal;
+
 public class WolfMod {
     private String name;
     private String sex;
@@ -42,7 +44,7 @@ public class WolfMod {
     }
 
     public int getWeight() {
-        return weigth;
+        return weight;
     }
 
     public void setWeight(int weight) {
