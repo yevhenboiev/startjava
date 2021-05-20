@@ -1,4 +1,4 @@
-package com.startjava.lesson_2.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
@@ -8,27 +8,18 @@ public class Calculator {
     private String sign;
     private int secondNumber;
 
-    public void setMathExpression(String mathExpression) {
+    public Calculator(String mathExpression) {
         this.mathExpression = mathExpression;
     }
 
-    public void setArrayMathExpression() {
+    public void mathExpression() {
         arrayMathExpression = mathExpression.split(" ");
-    }
-
-    public void setFirstNumber() {
         firstNumber = Integer.parseInt(arrayMathExpression[0]);
-    }
-
-    public void setSign() {
         sign = arrayMathExpression[1];
-    }
-
-    public void setSecondNumber() {
         secondNumber = Integer.parseInt(arrayMathExpression[2]);
     }
 
-    public int calculate() {
+    public void calculate() {
         int result = 0;
         switch (sign) {
             case "+" :
@@ -49,6 +40,6 @@ public class Calculator {
             case "^" :
                 result = (int) (Math.pow(firstNumber, secondNumber));
                 }
-        return result;
+        System.out.println("Ваше выражение = " + result);
         }
 }
