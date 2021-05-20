@@ -2,46 +2,53 @@ package com.startjava.lesson_2.calculator;
 
 public class Calculator {
 
-    private char sign;
+    private String mathExpression;
+    private String[] arrayMathExpression;
     private int firstNumber;
+    private String sign;
     private int secondNumber;
-    
-    public void setFirstNumber(int firstNumber) {;
-        this.firstNumber = firstNumber;
+
+    public void setMathExpression(String mathExpression) {
+        this.mathExpression = mathExpression;
     }
 
-    public void setSign(char sign) {
-        this.sign = sign;
+    public void setArrayMathExpression() {
+        arrayMathExpression = mathExpression.split(" ");
     }
 
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
+    public void setFirstNumber() {
+        firstNumber = Integer.parseInt(arrayMathExpression[0]);
     }
 
-    public void calculate() {
+    public void setSign() {
+        sign = arrayMathExpression[1];
+    }
+
+    public void setSecondNumber() {
+        secondNumber = Integer.parseInt(arrayMathExpression[2]);
+    }
+
+    public int calculate() {
         int result = 0;
         switch (sign) {
-            case '+' :
+            case "+" :
                 result = firstNumber + secondNumber;
                 break;
-            case '-' :
+            case "-" :
                 result = firstNumber - secondNumber;
                 break;
-            case '*' :
+            case "*" :
                 result = firstNumber * secondNumber;
                 break;
-            case '/' :
+            case "/" :
                 result = firstNumber / secondNumber;
                 break;
-            case '%' :
+            case "%" :
                 result = firstNumber % secondNumber;
                 break;
-            case '^' :
-                result = 1;
-                for (int i = 0; i < secondNumber; i++) {
-                    result *= firstNumber;
+            case "^" :
+                result = (int) (Math.pow(firstNumber, secondNumber));
                 }
+        return result;
         }
-        System.out.println("Ваше выражение = " + result);
-    }
 }
