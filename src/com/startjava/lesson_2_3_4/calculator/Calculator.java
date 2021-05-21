@@ -2,10 +2,10 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
+    private String mathExpression;
     private int firstNumber;
     private String sign;
     private int secondNumber;
-    private String mathExpression;
 
     public int calculate(String mathExpression) {
         this.mathExpression = mathExpression;
