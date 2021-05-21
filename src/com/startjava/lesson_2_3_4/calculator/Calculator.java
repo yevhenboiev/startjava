@@ -1,21 +1,15 @@
 package com.startjava.lesson_2_3_4.calculator;
 
-import java.util.Scanner;
-
 public class Calculator {
 
     private int firstNumber;
     private String sign;
     private int secondNumber;
+    private String mathExpression;
 
-    Scanner console = new Scanner(System.in);
-
-    public Calculator() {
-        splitExpression(console.nextLine());
-        System.out.println(calculate());
-    }
-
-    private int calculate() {
+    public int calculate(String mathExpression) {
+        this.mathExpression = mathExpression;
+        splitExpression();
         return switch (sign) {
             case "+" -> firstNumber + secondNumber;
             case "-" -> firstNumber - secondNumber;
@@ -27,7 +21,7 @@ public class Calculator {
         };
     }
 
-    private void splitExpression(String mathExpression) {
+    private void splitExpression() {
         String[] arrayMathExpression = mathExpression.split(" ");
         firstNumber = Integer.parseInt(arrayMathExpression[0]);
         sign = arrayMathExpression[1];

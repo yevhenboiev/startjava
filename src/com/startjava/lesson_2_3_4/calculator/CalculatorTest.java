@@ -9,8 +9,9 @@ public class CalculatorTest {
         System.out.println("Добро пожаловать в калькулятор");
         String reply;
         do {
-            System.out.print("Введите математическое выражение(Пример: \"2 + 3\"): ");
             Calculator calculator = new Calculator();
+            System.out.print("Введите математическое выражение(Пример: \"2 + 3\"): ");
+            System.out.println(calculator.calculate(console.nextLine()));
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]:");
                 reply = console.next();
