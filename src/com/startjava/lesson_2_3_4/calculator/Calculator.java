@@ -10,15 +10,21 @@ public class Calculator {
     public int calculate(String mathExpression) {
         this.mathExpression = mathExpression;
         splitExpression();
-        return switch (sign) {
-            case "+" -> firstNumber + secondNumber;
-            case "-" -> firstNumber - secondNumber;
-            case "*" -> firstNumber * secondNumber;
-            case "/" -> firstNumber / secondNumber;
-            case "%" -> firstNumber % secondNumber;
-            case "^" -> (int) (Math.pow(firstNumber, secondNumber));
-            default -> 0;
-        };
+        switch (sign) {
+            case "+" :
+                return firstNumber + secondNumber;
+            case "-" :
+                return firstNumber - secondNumber;
+            case "*" :
+                return firstNumber * secondNumber;
+            case "/" :
+                return firstNumber / secondNumber;
+            case "%" :
+                return firstNumber % secondNumber;
+            case "^" :
+                return (int) (Math.pow(firstNumber, secondNumber));
+        }
+        return 0;
     }
 
     private void splitExpression() {
