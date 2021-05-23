@@ -2,14 +2,12 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    private String mathExpression;
     private int firstNumber;
     private String sign;
     private int secondNumber;
 
     public int calculate(String mathExpression) {
-        this.mathExpression = mathExpression;
-        splitExpression();
+        splitExpression(mathExpression);
         switch (sign) {
             case "+" :
                 return firstNumber + secondNumber;
@@ -27,7 +25,7 @@ public class Calculator {
         return 0;
     }
 
-    private void splitExpression() {
+    private void splitExpression(String mathExpression) {
         String[] arrayMathExpression = mathExpression.split(" ");
         firstNumber = Integer.parseInt(arrayMathExpression[0]);
         sign = arrayMathExpression[1];
