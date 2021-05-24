@@ -16,21 +16,23 @@ public class GuessNumber {
 
     public void start() {
         randomNumber = (int) (Math.random() * 100 + 1);
-        while (true) {
-            if (makeMove(firstPlayer)) {
-                break;
-            }
-            if (makeMove(secondPlayer)) {
-                break;
-            }
+        while (!makeMove(firstPlayer) && !makeMove(secondPlayer)) {
+            System.out.println("Вы не угадали! Попробуйте еще раз!");
+            System.out.println("=================================================================");
         }
         System.out.println("=================================================================");
         outputNumbers(firstPlayer);
         outputNumbers(secondPlayer);
     }
 
-    private boolean checkCount(Player player) {
-        return player.getCount() >= 10;
+    private boolean makeMove(Player player) {
+
+        if (player.getCount() >= 10) {
+            System.out.println(player.getName() + " у вас закончились попытки!");
+            return false;
+        }
+        inputNumber(player);
+        return checkNumber(player);
     }
 
     private void inputNumber(Player player) {
@@ -46,20 +48,7 @@ public class GuessNumber {
             return true;
         }
         String checkResult = numberPlayer > randomNumber ? " больше, " : " меньше, ";
-        System.out.println(player.getName() + checkResult + "чем загадал компьютер");
-        return false;
-    }
-
-    private boolean makeMove(Player player) {
-        if (checkCount(player)) {
-            System.out.println(player.getName() + " у вас закончились попытки!");
-            return true;
-        }
-        inputNumber(player);
-        if (checkNumber(player)) {
-            return true;
-        }
-        System.out.println("=================================================================");
+        System.out.println(player.getName() + " ваше число" + checkResult + "чем загадал компьютер");
         return false;
     }
 

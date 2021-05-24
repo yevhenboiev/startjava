@@ -25,5 +25,6 @@ public class GuessNumberTest {
                 replace = console.next();
             } while (!replace.equals("yes") && !replace.equals("no"));
         } while (replace.equals("yes"));
+        System.out.println("До скорых встреч!");
     }
 }
