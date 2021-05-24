@@ -17,33 +17,20 @@ public class GuessNumber {
     public void start() {
         randomNumber = (int) (Math.random() * 100 + 1);
         while (true) {
-            if (checkCount(firstPlayer)) {
+            if (makeMove(firstPlayer)) {
                 break;
             }
-            inputNumber(firstPlayer);
-            if (checkNumber(firstPlayer)) {
+            if (makeMove(secondPlayer)) {
                 break;
             }
-            if (checkCount(secondPlayer)) {
-                break;
-            }
-            inputNumber(secondPlayer);
-            if (checkNumber(secondPlayer)) {
-                break;
-            }
-            System.out.println("=================================================================");
         }
+        System.out.println("=================================================================");
         outputNumbers(firstPlayer);
         outputNumbers(secondPlayer);
     }
 
     private boolean checkCount(Player player) {
-        if (player.getCount() < 10) {
-            return false;
-        } else {
-            System.out.println(player.getName() + " у вас закончились попытки!");
-            return true;
-        }
+        return player.getCount() >= 10;
     }
 
     private void inputNumber(Player player) {
@@ -52,20 +39,34 @@ public class GuessNumber {
     }
 
     private boolean checkNumber(Player player) {
-        if (player.getAttempts()[player.getCount() - 1] == randomNumber) {
+        int numberPlayer = player.getAttempts()[player.getCount() - 1];
+        if (numberPlayer == randomNumber) {
             System.out.println("Игрок " + player.getName() + " вы угадали число с " + player.getCount() +
                     " попытки");
             return true;
         }
-        String checkResult = player.getAttempts()[player.getCount() - 1] > randomNumber ? " больше, " : " меньше, ";
+        String checkResult = numberPlayer > randomNumber ? " больше, " : " меньше, ";
         System.out.println(player.getName() + checkResult + "чем загадал компьютер");
+        return false;
+    }
+
+    private boolean makeMove(Player player) {
+        if (checkCount(player)) {
+            System.out.println(player.getName() + " у вас закончились попытки!");
+            return true;
+        }
+        inputNumber(player);
+        if (checkNumber(player)) {
+            return true;
+        }
+        System.out.println("=================================================================");
         return false;
     }
 
     private void outputNumbers(Player player) {
         System.out.print(player.getName() + " все ваши числа: ");
-        for (int i : player.getAttempts()) {
-            System.out.print(i + " ");
+        for (int number : player.getAttempts()) {
+            System.out.print(number + " ");
         }
         System.out.println();
         player.nullifyNumbers();

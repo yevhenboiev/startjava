@@ -28,10 +28,6 @@ public class Player {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count += count;
-    }
-
     public void nullifyNumbers() {
         Arrays.fill(attempts, 0, count, 0);
         count = 0;
