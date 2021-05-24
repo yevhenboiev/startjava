@@ -7,20 +7,21 @@ public class Player {
     private int[] attempts = new int[10];
     private int count;
 
-    public String getName() {
-        return name;
-    }
-
     public Player(String name) {
         this.name = name;
     }
 
-    public int[] getAttempts() {
-        return Arrays.copyOf(attempts, attempts.length);
+    public String getName() {
+        return name;
     }
 
-    public void setAttempts(int number) {
-        this.attempts[count] = number;
+    public int[] getAttempts() {
+        return Arrays.copyOf(attempts, count);
+    }
+
+    public void setAttempt(int number) {
+        attempts[count] = number;
+        count++;
     }
 
     public int getCount() {

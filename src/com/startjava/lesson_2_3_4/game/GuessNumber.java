@@ -14,10 +14,41 @@ public class GuessNumber {
         this.secondPlayer = secondPlayer;
     }
 
+    public void start() {
+        randomNumber = (int) (Math.random() * 100 + 1);
+        while (true) {
+            if (checkCount(firstPlayer)) {
+                break;
+            }
+            inputNumber(firstPlayer);
+            if (checkNumber(firstPlayer)) {
+                break;
+            }
+            if (checkCount(secondPlayer)) {
+                break;
+            }
+            inputNumber(secondPlayer);
+            if (checkNumber(secondPlayer)) {
+                break;
+            }
+            System.out.println("=================================================================");
+        }
+        outputNumbers(firstPlayer);
+        outputNumbers(secondPlayer);
+    }
+
+    private boolean checkCount(Player player) {
+        if (player.getCount() < 10) {
+            return false;
+        } else {
+            System.out.println(player.getName() + " у вас закончились попытки!");
+            return true;
+        }
+    }
+
     private void inputNumber(Player player) {
         System.out.print("Игрок " + player.getName() + " введите ваше число: ");
-        player.setAttempts(console.nextInt());
-        player.setCount(1);
+        player.setAttempt(console.nextInt());
     }
 
     private boolean checkNumber(Player player) {
@@ -31,41 +62,12 @@ public class GuessNumber {
         return false;
     }
 
-    private boolean checkCount(Player player) {
-        if (player.getCount() < 10) {
-            return false;
-        } else {
-            System.out.println(player.getName() + " у вас закончились попытки!");
-            return true;
-        }
-    }
-
     private void outputNumbers(Player player) {
         System.out.print(player.getName() + " все ваши числа: ");
-        for (int i = 0; i < player.getCount(); i++) {
-            System.out.print(player.getAttempts()[i] + " ");
+        for (int i : player.getAttempts()) {
+            System.out.print(i + " ");
         }
         System.out.println();
         player.nullifyNumbers();
-    }
-
-    public void start() {
-        randomNumber = (int) (Math.random() * 100);
-        while (true) {
-            if (checkCount(firstPlayer)) {
-                break;
-            }
-            inputNumber(firstPlayer);
-            inputNumber(secondPlayer);
-            if (checkNumber(firstPlayer)) {
-                break;
-            }
-            if (checkNumber(secondPlayer)) {
-                break;
-            }
-            System.out.println("=================================================================");
-        }
-        outputNumbers(firstPlayer);
-        outputNumbers(secondPlayer);
     }
 }
